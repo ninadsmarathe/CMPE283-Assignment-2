@@ -13,3 +13,8 @@ Create new CPUID leaf 0x4FFFFFFD, 0x4FFFFFFC
 This is possible on Ubuntu by installing the 'cpuid' package.
 Run this user mode program in the nested VM
 - Check for correct output.
+
+#Steps to replicate
+We followed the steps to install the VM on our Windows OS. 
+1) Installed ISO - Ubuntu 18.5, allocated disk space of 200 GB. 
+2) We have cloned the Linux github repository, using following command; git clone 
