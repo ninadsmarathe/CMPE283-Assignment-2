@@ -4,7 +4,7 @@ We decided to work together throghout the implementation of project in GCP.
 
 - Ninad Marathe: Built the kernel, comprehended the necessary stages, cpuid instruction and cpu leaf node research, forking the torvalds/linux repository, understanding where to make the necessary changes in files, creation of the vmx.c file, creation of the test file, and updating of the documentation.
 
-- Suma Nagral: Built the kernel, VM installation of necessary kernel modules, education on atomic variables compiled the test file, created the documentation, and added the discussed modifications to the cpuid.c file.
+- Suma Nagral: Built the kernel, VM installation of necessary kernel modules, knowledge on atomic variables compiled the test file, created the documentation, and added the discussed modifications to the cpuid.c file.
 
 - Our task is to change the CPUID emulation code in KVM such that it returns more information when a particular CPUID "leaf function" is invoked.
 - For CPUID leaf node %eax=0x4FFFFFFC:
