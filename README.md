@@ -49,3 +49,37 @@ sudo apt-get install cpuid
 Run the following command inside your nested virtual machine
 cpuid -1 -l 0x4ffffffc
 
+Update your kvm module
+Follow the guidelines as described in the assignment and make changes to the linux/arch/x86/kvm/cpuid.c and linux/arch/x86/kvm/vmx/vmx.c files.
+
+After modification, run the below commands to build your kernel source tree for the changes to take effect.
+
+make -j 8 modules
+make -j 8
+sudo make INSTALL_MOD_STRIP=1 modules_install
+
+- Build your kvm module
+Check if kvm module is already loaded
+
+lsmod | grep kvm
+
+- Remove kvm if already loaded
+
+sudo rmmod kvm_intel sudo rmmod kvm
+
+- Load updated kvm modules
+
+sudo modprobe kvm sudo modprobe kvm_intel
+
+# Test your code
+Install cpudid package on your nested virtual machine
+sudo apt-get update
+
+sudo apt-get install cpuid
+
+# Test leaf node 0x4FFFFFFC
+Run the following command inside your nested virtual machine
+
+cpuid -1 -l 0x4ffffffc
+
+
