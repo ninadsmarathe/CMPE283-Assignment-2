@@ -16,5 +16,20 @@ Run this user mode program in the nested VM
 
 #Steps to replicate
 We followed the steps to install the VM on our Windows OS. 
-1) Installed ISO - Ubuntu 18.5, allocated disk space of 200 GB. 
-2) We have cloned the Linux github repository, using following command; git clone 
+1) Installed ISO - Ubuntu 18.5, allocated disk space of 200 GB, Memory of 8GB,  CPU 8 cores  
+2) We have cloned the Linux github repository, using following command; git clone https://github.com/ninadsmarathe/linux
+3) Install gcc make
+4) Installed the dependency; sudo apt-get install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf 
+5) Create cmpe283-1.c 
+using touch cmpe283-1.c command 
+Modify the content as per as the requirement.
+uname -r
+sudo apt install linux-headers-$(uname -r)
+cd Linux
+cp /boot/config-5.10.0-19-cloud-amd64 .config
+6) Check the Linux Version uname -a
+7) sudo make oldconfig
+8) cd linux
+9) Following instruction in "Linux" folder: make -j 8 modules && make -j 8 && sudo make modules_install && sudo make install. sudo reboot
+uname -a
+9) We will make changes to cpuid.c at ~/linux/arch/X86/kvm
